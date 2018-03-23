@@ -1,0 +1,39 @@
+﻿@model ExternalSiteDemo.Models.LaunchModel
+@{
+    ViewData["Title"] = "DoLaunch";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Launch</h2>
+<form asp-action="Launch">
+    <div>
+        <h4>LabLaunch</h4>
+        <hr />
+        <dl class="dl-horizontal">
+
+            <dt>
+                @Html.DisplayNameFor(model => model.FirstName)
+            </dt>
+            <dd>
+                @Html.TextBoxFor(model => model.FirstName)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.LastName)
+            </dt>
+            <dd>
+                @Html.TextBoxFor(model => model.LastName)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.Email)
+            </dt>
+            <dd>
+                @Html.TextBoxFor(model => model.Email)
+            </dd>
+        </dl>
+    </div>   
+    <input type="submit" value="Launch" class="btn btn-default" /> |
+    <a asp-action="Index">Back to List</a>
+</form>
+
+
+

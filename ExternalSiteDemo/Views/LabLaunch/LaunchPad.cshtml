@@ -1,0 +1,11 @@
+﻿@model ExternalSiteDemo.Models.LaunchModel
+@{
+    ViewData["Title"] = "LaunchPad";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Your Lab is ready!</h2>
+<a href="https://labondemand.com/Launch/3A84DD97" onclick="window.open('@Html.Raw(Model.LabLaunchURL)', 'mywin', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;">Launch Lab</a>
+
+<br />
+<a asp-action="Index">Back to List</a>

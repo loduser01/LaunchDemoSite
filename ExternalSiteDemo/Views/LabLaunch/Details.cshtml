@@ -1,0 +1,52 @@
+﻿@model ExternalSiteDemo.Data.LabAction
+
+@{
+    ViewData["Title"] = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>LabLaunch</h4>
+    <hr />
+    <dl class="dl-horizontal">
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FirstName)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.FirstName)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.LastName)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.LastName)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.LabActionDescription)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.LabActionDescription)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.State)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.State)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Status)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Status)
+        </dd>
+    </dl>
+</div>
+<div>
+    @if (Model.LabActionDescription == "Running") { <a asp-action="CancelLab" asp-route-id="@Model.Id">Cancel Lab</a> }|
+    <a href="@("https://labondemand.com/LabProfile/" + Model.LabProfileId)" target="_blank">Lab Profile Details</a> |
+    <a href="@("https://labondemand.com/LabInstance/" + @Model.LabInstanceId)" target="_blank">Lab Instance Details</a> |
+    <a asp-action="Index">Back to List</a>
+</div>
